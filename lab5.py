@@ -61,7 +61,7 @@ def fil_size():
         if cont==3:
             dat="Гб"
         dat2=[
-            file[3], str(float('{:.3f}'.format(te)))+dat, file[1]+" "+file[0]
+            file[3], str(float('{:.3f}'.format(te)))+ dat, file[1]+" "+file[0]
         ]
         data.append(dat2)
     print()
@@ -78,48 +78,47 @@ def maindef():
         print("2. Загрузить файл на сервер")
         print("3. Скачать файл с сервера")
         print("0. Выход")
-        choose = int(input("Выбирите действие: "))
-
-        if choose == 1:
-            print()
-            # Вывод списка файлов и каталогов на сервере
-            print(fil_size())
-            print()
-            time.sleep(5)
-        elif choose == 2:
-            # Выбор файла для отправики на сервер
-            file = filedialog.askopenfilename()
-            # открытие файла, после чтения и отправки его закрытие
-            with open(file, 'rb') as upload_file:
-                ftp.storbinary('STOR ' + os.path.basename(file), upload_file)
-            print()
-            print(f"[OK] Файл: {file} был загружен на сервер")
-            print()
-            time.sleep(5)
-        elif choose == 3:
-            print()
-            # Выбор файла для отправики на сервер
-            print(fil_size())
-            print()
-            file = str(input('Какой файл скачаем с сервера: '))
-            # Выбор дериктории для сохранения файла
-            dir = filedialog.askdirectory()
-            # открытие файла и запись файла
-            with open(dir+"\\"+file, 'wb') as f:
-                ftp.retrbinary('RETR ' + file, f.write)
-            print()
-            print(f"[OK] Файл: {file} был скачан в {dir}/{file}")
-            print()
-            time.sleep(5)
-        elif choose == 0:
-            # выход
-            return
-        else:
-            # если выбрали того что нет в списке
-            print("[ERROR] Нет даннного действия")
-            time.sleep(5)
-            maindef()
-
+        choose = int(input("Выберите действие: "))
+        match choose:
+            case 1:
+                # Вывод списка файлов и каталогов на сервере
+                print()
+                print(fil_size())
+                print()
+                time.sleep(5)
+            case 2:
+                # Выбор файла для отправки на сервер
+                file = filedialog.askopenfilename()
+                # открытие файла, после чтения и отправки его закрытие
+                with open(file, 'rb') as upload_file:
+                    ftp.storbinary('STOR ' + os.path.basename(file), upload_file)
+                print()
+                print(f"[OK] Файл: {file} был загружен на сервер")
+                print()
+                time.sleep(5)
+            case 3:
+                print()
+                # Выбор файла для отправки на сервер
+                print(fil_size())
+                print()
+                file = str(input('Какой файл скачаем с сервера: '))
+                # Выбор директории для сохранения файла
+                dir = filedialog.askdirectory()
+                # открытие файла и запись файла
+                with open(dir + "\\" + file, 'wb') as f:
+                    ftp.retrbinary('RETR ' + file, f.write)
+                print()
+                print(f"[OK] Файл: {file} был скачан в {dir}/{file}")
+                print()
+                time.sleep(5)
+            case 0:
+                # выход
+                return
+            case _:
+                # если выбрали то, чего нет в списке
+                print("[ERROR] Нет даннного действия")
+                time.sleep(5)
+                maindef()
     # Закрываем FTP соединение
     ftp.close
 
