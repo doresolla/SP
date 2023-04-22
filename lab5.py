@@ -98,7 +98,7 @@ def maindef():
                 time.sleep(5)
             case 3:
                 print()
-                # Выбор файла для отправки на сервер
+                # Выбор файла для скачивания с сервера
                 print(fil_size())
                 print()
                 file = str(input('Какой файл скачаем с сервера: '))
