@@ -16,4 +16,5 @@ import uuid
 
 ![1 1](https://user-images.githubusercontent.com/131467212/233776971-7981cbb3-6967-42e9-b9c9-6370e4cc1ee7.png)
 
+ Локальная IP адрес компьютера, выводимый командой ipconfig
 ![1 2](https://user-images.githubusercontent.com/131467212/233776973-b619c196-ab80-4633-b84b-3fb366f36cdd.png)
