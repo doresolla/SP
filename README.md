@@ -1,15 +1,20 @@
-# Лабораторная работа №3
+# Лабораторная работа №5
 
-Запустить ***main.py***. 
-
-Результат работы программы представлен в файлах ***raspisanie.html*** и ***Rasp.txt***
+Запустить ***lab5.py***. 
 
 Для корректной работы программы необходимы следующие библиотеки:
 
 ```python
-import requests
-from bs4 import BeautifulSoup
+import ftplib
+import os
+import time
+from tkinter import filedialog
+import tkinter
+import tabulate
 
-pip install requests
-pip install bs4
+
+pip install pyftpdlib
+pip install python-time
+pip install tkintertable
+pip install tabulate
 ```
