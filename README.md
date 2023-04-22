@@ -11,8 +11,8 @@ import uuid
 ```
 
 Результат работы программы
-![image](https://user-images.githubusercontent.com/131467212/233772504-7507af2e-dbc7-400f-99db-0d2f3810c6fc.png)
 
+![1 1](https://user-images.githubusercontent.com/131467212/233778113-99d6da8d-7d76-47cb-b9bd-72e18579473a.png)
 
 
  Локальный IP адрес компьютера, выводимый командой ipconfig
