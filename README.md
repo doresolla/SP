@@ -9,3 +9,6 @@ import re
 import socket
 import uuid
 ```
+
+Результат работы программы
+![image](https://user-images.githubusercontent.com/131467212/233772504-7507af2e-dbc7-400f-99db-0d2f3810c6fc.png)
